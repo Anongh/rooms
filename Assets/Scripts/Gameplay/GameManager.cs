@@ -2,8 +2,9 @@
 using UnityEngine.SceneManagement;
 
 public sealed class GameManager : MonoBehaviourSingleton<GameManager> {
-    [SerializeField] private int _levelCount = 3;
-    [SerializeField] private bool[] _levelsCompleted = new bool[3];
+    private const int NumLevels = 3;
+
+    [SerializeField] private bool[] _levelsCompleted = new bool[NumLevels];
 
     private int _currentLevel;
 

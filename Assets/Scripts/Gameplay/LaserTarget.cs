@@ -21,9 +21,8 @@ public class LaserTarget : MonoBehaviour {
     }
 
     private void TargetedChanged() {
-        if (_targetedBy != null) {
-            _propertyBlock.SetColor("_EmissionColor", _targetedBy.Color);
-            _renderer.SetPropertyBlock(_propertyBlock);
-        }
+        var color = _targetedBy != null ? _targetedBy.Color : Color.black;
+        _propertyBlock.SetColor("_EmissionColor", color);
+        _renderer.SetPropertyBlock(_propertyBlock);
     }
 }

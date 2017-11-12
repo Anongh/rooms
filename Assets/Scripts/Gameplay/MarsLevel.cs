@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class MarsLevel : Level {
+public sealed class MarsLevel : Level {
     private const int NumLasers = 3;
 
-    [SerializeField] private Transform[] _lasers;
+    [SerializeField] private LaserTarget[] _targets;
 
     private bool[] _isOnTarget = new bool[NumLasers];
     private int _raycastLayerMask;
@@ -13,15 +13,16 @@ public class MarsLevel : Level {
     }
 
     private void Update() {
-        for (int i = 0; i < NumLasers; ++i) {
-            RaycastHit hitInfo;
-            if (Physics.Raycast(_lasers[i].position, _lasers[i].forward, out hitInfo, 100,
-                _raycastLayerMask, QueryTriggerInteraction.Ignore)) {
-                // TODO: specific satellite
-                _isOnTarget[i] = true;
-            } else {
-                _isOnTarget[i] = false;
+        var allTargetsHit = true;
+        for (int i = 0; i < _targets.Length; ++i) {
+            if (_targets[i].TargetedBy == null) {
+                allTargetsHit = false;
+                break;
             }
+        }
+
+        if (allTargetsHit && !IsCompleted) {
+            Complete();
         }
     }
 }

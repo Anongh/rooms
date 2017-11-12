@@ -457,11 +457,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 926993681}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c92b1927c22feaf48aee35a39e72307f, type: 3}
+  m_Script: {fileID: 11500000, guid: ec33016fb6c3442d9642be1bfa4ebca5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _color: {r: 1, g: 0, b: 0, a: 1}
   _index: 1
+  _targets:
+  - {fileID: 1389695275}
+  - {fileID: 686327808}
+  - {fileID: 645650713}
 --- !u!4 &926993683
 Transform:
   m_ObjectHideFlags: 0
