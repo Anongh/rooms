@@ -7,12 +7,14 @@ public sealed class HubLevel : MonoBehaviour {
 
     private void Start() {
         for (int i = 0; i < _colors.Length; ++i) {
-            if (GameManager.Instance.IsLevelComplete(i)) {
+            if (GameManager.Instance.IsLevelComplete(i + 1)) {
                 _particleSystem.Emit(new ParticleSystem.EmitParams {
                     startColor = _colors[i]
                 }, _numParticles);
             }
         }
+
+        GameManager.Instance.SetCurrentScene(gameObject.scene.name);
     }
 
     private void Update() {

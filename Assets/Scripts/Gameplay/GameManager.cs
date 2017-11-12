@@ -3,25 +3,33 @@ using UnityEngine.SceneManagement;
 
 public sealed class GameManager : MonoBehaviourSingleton<GameManager> {
     private const int NumLevels = 3;
+    private const int HubBuildIndex = 0;
 
     [SerializeField] private bool[] _levelsCompleted = new bool[NumLevels];
 
-    private int _currentLevel;
+    private string _currentScene;
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.R)) {
             ResetProgress();
-            LoadScene(0);
+            LoadScene(HubBuildIndex);
         }
     }
 
     public bool IsLevelComplete(int level) {
-        return _levelsCompleted[level];
+        return _levelsCompleted[level - 1];
+    }
+
+    public void SetCurrentScene(string sceneName) {
+        Debug.LogFormat("[GameManager] Opening scene {0}", sceneName);
+        _currentScene = sceneName;
+
+        if (DesaturateScreenFade.HasInstance) DesaturateScreenFade.Instance.StartFadeIn();
     }
 
     public void CompleteLevel(Level level) {
-        _levelsCompleted[level.Index] = true;
-        LoadScene(0);
+        _levelsCompleted[level.Index - 1] = true;
+        LoadScene(HubBuildIndex);
     }
 
     public void GoToNextLevel() {
@@ -37,11 +45,17 @@ public sealed class GameManager : MonoBehaviourSingleton<GameManager> {
     }
 
     private void LoadScene(int buildIndex) {
-        // TODO: transition out
+        DesaturateScreenFade.Instance.StartFadeOut(() => {
+            SceneManager.UnloadSceneAsync(_currentScene);
+            SceneManager.LoadScene(buildIndex, LoadSceneMode.Additive);
+            SceneManager.sceneLoaded += OnSceneLoadedSetActive;
+        });
 
-        SceneManager.UnloadSceneAsync(_currentLevel);
-        _currentLevel = 0;
-        SceneManager.LoadScene(_currentLevel, LoadSceneMode.Additive);
+    }
+
+    private void OnSceneLoadedSetActive(Scene scene, LoadSceneMode loadSceneMode) {
+        SceneManager.sceneLoaded -= OnSceneLoadedSetActive;
+        SceneManager.SetActiveScene(scene);
     }
 
     private void ResetProgress() {

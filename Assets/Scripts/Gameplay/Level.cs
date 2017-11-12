@@ -18,6 +18,11 @@ public class Level : MonoBehaviour {
         get { return _isCompleted; }
     }
 
+    protected virtual void Start() {
+        GameManager.Instance.SetCurrentScene(gameObject.scene.name);
+    }
+
+    [ContextMenu("Complete")]
     public void Complete() {
         if (_isCompleted) return;
 
