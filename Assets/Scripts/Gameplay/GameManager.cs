@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviourSingleton<GameManager> {
+public sealed class GameManager : MonoBehaviourSingleton<GameManager> {
     [SerializeField] private int _levelCount = 3;
     [SerializeField] private bool[] _levelsCompleted = new bool[3];
 

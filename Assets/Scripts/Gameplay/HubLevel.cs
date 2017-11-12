@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class HubLevel : MonoBehaviour {
+public sealed class HubLevel : MonoBehaviour {
     [SerializeField] private Color[] _colors;
     [SerializeField] private int _numParticles;
     [SerializeField] private ParticleSystem _particleSystem;

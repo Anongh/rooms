@@ -6,9 +6,11 @@ public class ControllerRotate : MonoBehaviour {
     [SerializeField] private float _pitchSpeed = 60;
     [SerializeField] private float _minX = -90, _maxX = 0;
 
-    private bool _isActive;
+    private bool _isFocused;
 
     private void Update() {
+        if (!_isFocused) return;
+
         var yawInput = Input.GetAxis("Xbox RStick X");
         var pitchInput = Input.GetAxis("Xbox RStick Y");
 
@@ -20,13 +22,13 @@ public class ControllerRotate : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other) {
         if (other.CompareTag("Player")) {
-            _isActive = true;
+            _isFocused = true;
         }
     }
 
     private void OnTriggerExit(Collider other) {
         if (other.CompareTag("Player")) {
-            _isActive = false;
+            _isFocused = false;
         }
     }
 }
