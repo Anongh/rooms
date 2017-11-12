@@ -3,15 +3,9 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviourSingleton<GameManager> {
     [SerializeField] private int _levelCount = 3;
+    [SerializeField] private bool[] _levelsCompleted = new bool[3];
 
     private int _currentLevel;
-    private bool[] _levelsCompleted;
-
-    private void Start() {
-        _levelsCompleted = new bool[_levelCount];
-
-        ResetProgress();
-    }
 
     private void Update() {
         if (Input.GetKeyDown(KeyCode.R)) {
