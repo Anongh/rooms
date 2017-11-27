@@ -1,0 +1,132 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1728444928890128}
+  m_IsPrefabParent: 1
+--- !u!1 &1728444928890128
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4397054049883178}
+  - component: {fileID: 114934124123576836}
+  - component: {fileID: 114577544785860972}
+  m_Layer: 0
+  m_Name: '[Laser System]'
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4397054049883178
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728444928890128}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114577544785860972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728444928890128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bdc123896fe9542bc7c85c7652127e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPrefabs:
+  - {fileID: 150758, guid: 94eefdb29160e18469cf131d363023e1, type: 2}
+  - {fileID: 100000, guid: 8352c6721492cf64587cdba68fdce886, type: 2}
+  - {fileID: 100000, guid: ef78fe5f45a4a214f89419d18bf427cc, type: 2}
+  - {fileID: 138360, guid: 32117cd6d636a8143a2547b8698d98ff, type: 2}
+  - {fileID: 100000, guid: dfdf2838935711c4a8ec2ef18a081582, type: 2}
+  - {fileID: 100000, guid: 38fd76df85ec07f4391fb7620737917d, type: 2}
+  amountToBuffer: 
+  onlyPool: 
+  defaultBufferAmount: 5
+--- !u!114 &114934124123576836
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1728444928890128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7145188c468b234fb19a24996e8131c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  infProt: 1
+  controlSwitch: 1
+  mode2D: 0
+  hit2DDistance: 0.1
+  debugM: 0
+  rayL: 30
+  intersect: 1
+  reflect: 1
+  reflectLRemainder: 1
+  reflectStCap: 1
+  updateLrPos: 1
+  endCapB: 1
+  startCapB: 1
+  hitObjB: 1
+  hitRefl: 1
+  canHit: 1
+  debugI: -1
+  laserObj: {fileID: 150758, guid: 94eefdb29160e18469cf131d363023e1, type: 2}
+  intSctObj: {fileID: 100000, guid: dfdf2838935711c4a8ec2ef18a081582, type: 2}
+  hitObj: {fileID: 138360, guid: 32117cd6d636a8143a2547b8698d98ff, type: 2}
+  startCapObj: {fileID: 100000, guid: 8352c6721492cf64587cdba68fdce886, type: 2}
+  endCapObj: {fileID: 100000, guid: ef78fe5f45a4a214f89419d18bf427cc, type: 2}
+  onSys: 1
+  hitLayerM:
+    serializedVersion: 2
+    m_Bits: 315
+  minIntDist: 0.05
+  allowedMat:
+  - {fileID: 2100000, guid: 277e057a9f7fc43d09c76894eeb14c6e, type: 2}
+  allowedMatObj:
+  - {fileID: 100000, guid: 38fd76df85ec07f4391fb7620737917d, type: 2}
+  passMat:
+  - {fileID: 2100000, guid: a4819a4cf940b7d478713ff47bc8f35b, type: 2}
+  allowedTagObj: []
+  hitReflMat: 1
+  passReflMat: 1
+  lasLineREff: 1
+  powerStart: 1
+  reflInc: 1
+  chargeInc: 2
+  reflMatInc:
+  - 1
+  pasMatInc:
+  - 1
+  reflTag: []
+  reflTagInc: []
+  pasTag: []
+  pasTagInc: []
+  hitScanMode: 1
+  powerCap: 0
+  lrWidth: 0.1
+  desSpObj: 5
+  disalbePartObj: 1
+  infLM: 0
+  infLI: 0
+  enablePool: 1
+  nextSc: 5

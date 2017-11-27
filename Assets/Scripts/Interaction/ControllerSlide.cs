@@ -1,15 +1,15 @@
 ﻿using UnityEngine;
 
 [RequireComponent(typeof(Collider))]
-public class ControllerSlide : MonoBehaviour {
+public sealed class ControllerSlide : ControllerInteraction {
     [SerializeField] private Transform _point1;
     [SerializeField] private Transform _point2;
     [SerializeField] private float _speed = 1;
 
-    private bool _isFocused;
+//    private bool _isFocused;
 
     private void Update() {
-        if (!_isFocused) return;
+        if (!IsFocused) return;
 
         var slideInput = Input.GetAxis("Xbox RStick X");
 
@@ -25,17 +25,17 @@ public class ControllerSlide : MonoBehaviour {
         transform.position = Vector3.Lerp(_point1.position, _point2.position, t);
     }
 
-    private void OnTriggerEnter(Collider other) {
-        if (other.CompareTag("Player")) {
-            _isFocused = true;
-        }
-    }
-
-    private void OnTriggerExit(Collider other) {
-        if (other.CompareTag("Player")) {
-            _isFocused = false;
-        }
-    }
+//    private void OnTriggerEnter(Collider other) {
+//        if (other.CompareTag("Player")) {
+//            _isFocused = true;
+//        }
+//    }
+//
+//    private void OnTriggerExit(Collider other) {
+//        if (other.CompareTag("Player")) {
+//            _isFocused = false;
+//        }
+//    }
 
     private void OnDrawGizmos() {
         Gizmos.color = Color.white;

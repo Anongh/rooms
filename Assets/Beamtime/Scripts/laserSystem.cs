@@ -11,6 +11,9 @@ namespace eageramoeba.Lasers {
 
 		static public laserSystem instance;
 
+		public delegate void LaserHitDelegate(laser hitLaser, GameObject hitObject);
+		public event LaserHitDelegate LaserHit;
+
 		[SerializeField, HideInInspector]
 		public bool infProt = true;
 		[SerializeField, HideInInspector]
@@ -678,6 +681,9 @@ namespace eageramoeba.Lasers {
 						scriptL.intSctGo = intSctGo;
 						scriptL.gameObjectSt = gameObjectSt;
 						scriptL.hitGO = hitGO;
+						if (hitGO && instance.LaserHit != null) {
+							instance.LaserHit(scriptL, hitGO);
+						}
 						scriptL.hitA = hitA;
 						scriptL.hitNorm = hitNorm;
 						scriptL.fwd = fwd;

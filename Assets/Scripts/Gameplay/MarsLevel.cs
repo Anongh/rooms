@@ -6,7 +6,7 @@ public sealed class MarsLevel : Level {
     private void Update() {
         var allTargetsHit = true;
         for (int i = 0; i < _targets.Length; ++i) {
-            if (_targets[i].TargetedBy == null) {
+            if (!_targets[i].IsTargeted) {
                 allTargetsHit = false;
                 break;
             }
