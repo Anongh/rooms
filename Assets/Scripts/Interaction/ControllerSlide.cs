@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public sealed class ControllerSlide : ControllerInteraction {
+    [SerializeField] private Transform _slider;
     [SerializeField] private Transform _point1;
     [SerializeField] private Transform _point2;
     [SerializeField] private float _speed = 1;
@@ -17,12 +17,12 @@ public sealed class ControllerSlide : ControllerInteraction {
         var distance = offset.magnitude;
         var direction = offset / distance;
 
-        var t = Vector3.Dot(transform.position - _point1.position, direction);
+        var t = Vector3.Dot(_slider.position - _point1.position, direction);
         t += slideInput * _speed * Time.deltaTime;
         t /= distance;
         t = Mathf.Clamp01(t);
 
-        transform.position = Vector3.Lerp(_point1.position, _point2.position, t);
+        _slider.position = Vector3.Lerp(_point1.position, _point2.position, t);
     }
 
 //    private void OnTriggerEnter(Collider other) {
@@ -38,8 +38,10 @@ public sealed class ControllerSlide : ControllerInteraction {
 //    }
 
     private void OnDrawGizmos() {
+        if (!_slider) return;
+
         Gizmos.color = Color.white;
-        if (_point1) Gizmos.DrawLine(_point1.position, transform.position);
-        if (_point2) Gizmos.DrawLine(_point2.position, transform.position);
+        if (_point1) Gizmos.DrawLine(_point1.position, _slider.position);
+        if (_point2) Gizmos.DrawLine(_point2.position, _slider.position);
     }
 }

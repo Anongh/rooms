@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Collider))]
 public sealed class ControllerRotate : ControllerInteraction {
     [SerializeField] private float _yawSpeed = 90;
     [SerializeField] private float _pitchSpeed = 60;
