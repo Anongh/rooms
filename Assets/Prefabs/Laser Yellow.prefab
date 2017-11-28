@@ -1,0 +1,239 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &150758
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 445104}
+  - component: {fileID: 11467036}
+  - component: {fileID: 12097042}
+  m_Layer: 0
+  m_Name: Laser Yellow
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &445104
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150758}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11467036
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76e92599133c8094cb021f547ec65cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isChild: 0
+  groupId: 
+  onM: 1
+  hitLayerM:
+    serializedVersion: 2
+    m_Bits: 0
+  useGlobal: 0
+  length: 30
+  intersectE: 1
+  reflectE: 1
+  hitReflectE: 1
+  hitE: 1
+  reflLenRemE: 1
+  hitRefMatE: 1
+  passRefMatE: 1
+  passedMatsE: []
+  reflMatsE: []
+  reflMatObj: []
+  reflTag: []
+  reflTagInc: []
+  allowedTagObj: []
+  hitScanMode: 0
+  lasLineREff: 1
+  powerStart: 1
+  reflInc: 2
+  chargeInc: 2
+  reflMatInc: []
+  pasMatInc: []
+  powerCap: 0
+  lrWidth: 0.2
+  laserObj: {fileID: 150758}
+  intSctObj: {fileID: 0}
+  hitObj: {fileID: 0}
+  startCapObj: {fileID: 0}
+  endCapObj: {fileID: 0}
+  localLength: 0
+  localIntersect: 0
+  localIntersectReflect: 0
+  localIntersectRemain: 0
+  localHit: 0
+  localHitMask: 0
+  localHitReflect: 0
+  localHitReflectMat: 0
+  localPassthroughMat: 1
+  localLineRenderer: 0
+  localLineRendererWidth: 0
+  localStartPower: 0
+  localPowerCap: 0
+  localReflectionPowerInc: 0
+  localChargePowerInc: 0
+  localLaserObj: 1
+  localIntSctObj: 0
+  localHitObj: 0
+  localStartCapObj: 0
+  localEndCapObj: 0
+  localreflMatObj: 1
+  localreflTag: 1
+  localreflTagInc: 1
+  localallowedTagObj: 1
+  localhitScanMode: 0
+  blockType: 0
+  blockThreshold: -1
+  chargeType: 0
+  useRem: 0
+  remLength: 0
+  intPos: {x: 0, y: 0, z: 0}
+  intGoI: 0
+  intSctGo: {fileID: 0}
+  gameObjectSt: {fileID: 0}
+  hitGO: {fileID: 0}
+  hitA: {x: 0, y: 0, z: 0}
+  hitNorm: {x: 0, y: 0, z: 0}
+  hitDist: 0
+  shrtA: 0
+  intSctA: []
+  fwd: {x: 0, y: 0, z: 0}
+  sPos: {x: 0, y: 0, z: 0}
+  parent1: {fileID: 0}
+  parent2: {fileID: 0}
+  origin1: {fileID: 0}
+  origin2: {fileID: 0}
+  curPower: 1
+  hitMat: {fileID: 0}
+  lastFI: 0
+  firstRun: 1
+  infL: 0
+  hasInt: 0
+  hasHit: 0
+  directChild: {fileID: 0}
+  lr: {fileID: 0}
+  hitTag: 
+--- !u!120 &12097042
+LineRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150758}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 0
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 2100000, guid: f2017be88d5b248629e36d717696c365, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Positions:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  m_Parameters:
+    serializedVersion: 2
+    widthMultiplier: 1
+    widthCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 0
+    colorGradient:
+      serializedVersion: 2
+      key0: {r: 1, g: 1, b: 1, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 1}
+      key2: {r: 0, g: 0, b: 0, a: 0}
+      key3: {r: 0, g: 0, b: 0, a: 0}
+      key4: {r: 0, g: 0, b: 0, a: 0}
+      key5: {r: 0, g: 0, b: 0, a: 0}
+      key6: {r: 0, g: 0, b: 0, a: 0}
+      key7: {r: 0, g: 0, b: 0, a: 0}
+      ctime0: 0
+      ctime1: 65535
+      ctime2: 0
+      ctime3: 0
+      ctime4: 0
+      ctime5: 0
+      ctime6: 0
+      ctime7: 0
+      atime0: 0
+      atime1: 65535
+      atime2: 0
+      atime3: 0
+      atime4: 0
+      atime5: 0
+      atime6: 0
+      atime7: 0
+      m_Mode: 0
+      m_NumColorKeys: 2
+      m_NumAlphaKeys: 2
+    numCornerVertices: 0
+    numCapVertices: 0
+    alignment: 0
+    textureMode: 0
+    generateLightingData: 0
+  m_UseWorldSpace: 1
+  m_Loop: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 150758}
+  m_IsPrefabParent: 1

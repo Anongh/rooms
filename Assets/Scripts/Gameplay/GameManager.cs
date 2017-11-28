@@ -28,6 +28,7 @@ public sealed class GameManager : MonoBehaviourSingleton<GameManager> {
     }
 
     public void CompleteLevel(Level level) {
+        Debug.LogFormat("[GameManager] Level {0} complete", level.Index);
         _levelsCompleted[level.Index - 1] = true;
         LoadScene(HubBuildIndex);
     }
@@ -50,7 +51,6 @@ public sealed class GameManager : MonoBehaviourSingleton<GameManager> {
             SceneManager.LoadScene(buildIndex, LoadSceneMode.Additive);
             SceneManager.sceneLoaded += OnSceneLoadedSetActive;
         });
-
     }
 
     private void OnSceneLoadedSetActive(Scene scene, LoadSceneMode loadSceneMode) {

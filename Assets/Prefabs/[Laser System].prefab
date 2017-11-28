@@ -53,12 +53,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPrefabs:
-  - {fileID: 150758, guid: 94eefdb29160e18469cf131d363023e1, type: 2}
   - {fileID: 100000, guid: 8352c6721492cf64587cdba68fdce886, type: 2}
   - {fileID: 100000, guid: ef78fe5f45a4a214f89419d18bf427cc, type: 2}
   - {fileID: 138360, guid: 32117cd6d636a8143a2547b8698d98ff, type: 2}
   - {fileID: 100000, guid: dfdf2838935711c4a8ec2ef18a081582, type: 2}
   - {fileID: 100000, guid: 38fd76df85ec07f4391fb7620737917d, type: 2}
+  - {fileID: 150758, guid: e2d89419356334a1c985fdf2e3fdcdcf, type: 2}
+  - {fileID: 150758, guid: 0d0f4e6a6406840adacf569d334ea51b, type: 2}
+  - {fileID: 150758, guid: bf48fb2cf4df64060abaf59d84ac7803, type: 2}
+  - {fileID: 150758, guid: b58a85754e9d844048e9a2e4c08f7c25, type: 2}
+  - {fileID: 150758, guid: 25e787fff8fcd476fa3711376001edfc, type: 2}
+  - {fileID: 150758, guid: 6c923e2fd2bdb4c5792a2859ef55de67, type: 2}
+  - {fileID: 150758, guid: fa7720e5860aa4b1fb547876576b78e9, type: 2}
   amountToBuffer: 
   onlyPool: 
   defaultBufferAmount: 5

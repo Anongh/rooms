@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-public class Level : MonoBehaviour {
+public sealed class Level : MonoBehaviour {
     [SerializeField] private Color _color;
     [SerializeField] private int _index;
+    [SerializeField] private LaserTarget[] _targets;
 
     private bool _isCompleted;
 
@@ -18,8 +19,22 @@ public class Level : MonoBehaviour {
         get { return _isCompleted; }
     }
 
-    protected virtual void Start() {
+    private void Start() {
         GameManager.Instance.SetCurrentScene(gameObject.scene.name);
+    }
+
+    private void Update() {
+        var allTargetsHit = true;
+        for (int i = 0; i < _targets.Length; ++i) {
+            if (!_targets[i].IsTargeted) {
+                allTargetsHit = false;
+                break;
+            }
+        }
+
+        if (allTargetsHit && !IsCompleted) {
+            Complete();
+        }
     }
 
     [ContextMenu("Complete")]

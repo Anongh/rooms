@@ -1,39 +1,28 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &100100000
-Prefab:
-  m_ObjectHideFlags: 1
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications: []
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1359483903007714}
-  m_IsPrefabParent: 1
---- !u!1 &1359483903007714
+--- !u!1 &150758
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4174779370133100}
-  - component: {fileID: 114926306363189422}
-  - component: {fileID: 120447325738311636}
+  - component: {fileID: 445104}
+  - component: {fileID: 11467036}
+  - component: {fileID: 12097042}
   m_Layer: 0
-  m_Name: Laser
+  m_Name: Laser Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4174779370133100
+--- !u!4 &445104
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359483903007714}
+  m_GameObject: {fileID: 150758}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -41,12 +30,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &114926306363189422
+--- !u!114 &11467036
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359483903007714}
+  m_GameObject: {fileID: 150758}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 76e92599133c8094cb021f547ec65cf7, type: 3}
@@ -58,7 +47,7 @@ MonoBehaviour:
   hitLayerM:
     serializedVersion: 2
     m_Bits: 0
-  useGlobal: 1
+  useGlobal: 0
   length: 30
   intersectE: 1
   reflectE: 1
@@ -82,36 +71,36 @@ MonoBehaviour:
   pasMatInc: []
   powerCap: 0
   lrWidth: 0.2
-  laserObj: {fileID: 0}
+  laserObj: {fileID: 150758}
   intSctObj: {fileID: 0}
   hitObj: {fileID: 0}
   startCapObj: {fileID: 0}
   endCapObj: {fileID: 0}
-  localLength: 1
-  localIntersect: 1
-  localIntersectReflect: 1
-  localIntersectRemain: 1
-  localHit: 1
-  localHitMask: 1
-  localHitReflect: 1
-  localHitReflectMat: 1
+  localLength: 0
+  localIntersect: 0
+  localIntersectReflect: 0
+  localIntersectRemain: 0
+  localHit: 0
+  localHitMask: 0
+  localHitReflect: 0
+  localHitReflectMat: 0
   localPassthroughMat: 1
-  localLineRenderer: 1
-  localLineRendererWidth: 1
-  localStartPower: 1
-  localPowerCap: 1
-  localReflectionPowerInc: 1
-  localChargePowerInc: 1
+  localLineRenderer: 0
+  localLineRendererWidth: 0
+  localStartPower: 0
+  localPowerCap: 0
+  localReflectionPowerInc: 0
+  localChargePowerInc: 0
   localLaserObj: 1
-  localIntSctObj: 1
-  localHitObj: 1
-  localStartCapObj: 1
-  localEndCapObj: 1
+  localIntSctObj: 0
+  localHitObj: 0
+  localStartCapObj: 0
+  localEndCapObj: 0
   localreflMatObj: 1
   localreflTag: 1
   localreflTagInc: 1
   localallowedTagObj: 1
-  localhitScanMode: 1
+  localhitScanMode: 0
   blockType: 0
   blockThreshold: -1
   chargeType: 0
@@ -143,12 +132,12 @@ MonoBehaviour:
   directChild: {fileID: 0}
   lr: {fileID: 0}
   hitTag: 
---- !u!120 &120447325738311636
+--- !u!120 &12097042
 LineRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1359483903007714}
+  m_GameObject: {fileID: 150758}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -157,7 +146,7 @@ LineRenderer:
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: c80d68c6af81e4398a7cae916ee75334, type: 2}
+  - {fileID: 2100000, guid: 376667a04f1874baa86ccab4b8d0dadc, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -237,3 +226,14 @@ LineRenderer:
     generateLightingData: 0
   m_UseWorldSpace: 1
   m_Loop: 0
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 150758}
+  m_IsPrefabParent: 1

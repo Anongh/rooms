@@ -62,7 +62,9 @@ public sealed class DesaturateScreenFade : MonoBehaviourSingleton<DesaturateScre
     }
 
     public void StartFade(float to, System.Action callback = null) {
-        if (_isFading) return;
+        if (_isFading) {
+            StopAllCoroutines();
+        }
         StartCoroutine(Fade(to, callback));
     }
 
