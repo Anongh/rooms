@@ -27,7 +27,7 @@ using UnityEngine;
 
 internal static class OVRPlugin
 {
-	public static readonly System.Version wrapperVersion = OVRP_1_19_0.version;
+	public static readonly System.Version wrapperVersion = OVRP_1_20_0.version;
 
 	private static System.Version _version;
 	public static System.Version version
@@ -2490,5 +2490,10 @@ internal static class OVRPlugin
 	private static class OVRP_1_19_0
 	{
 		public static readonly System.Version version = new System.Version(1, 19, 0);
+	}
+
+	private static class OVRP_1_20_0
+	{
+		public static readonly System.Version version = new System.Version(1, 20, 0);
 	}
 }

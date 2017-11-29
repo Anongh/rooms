@@ -105,9 +105,17 @@ public class OVROverlay : MonoBehaviour
 	/// Use this function to set texture and texNativePtr when app is running 
 	/// GetNativeTexturePtr is a slow behavior, the value should be pre-cached 
 	/// </summary>
+#if UNITY_2017_2_OR_NEWER
 	public void OverrideOverlayTextureInfo(Texture srcTexture, IntPtr nativePtr, UnityEngine.XR.XRNode node)
+#else
+	public void OverrideOverlayTextureInfo(Texture srcTexture, IntPtr nativePtr, VR.VRNode node)
+#endif
 	{
+#if UNITY_2017_2_OR_NEWER
 		int index = (node == UnityEngine.XR.XRNode.RightEye) ? 1 : 0;
+#else
+		int index = (node == VR.VRNode.RightEye) ? 1 : 0;
+#endif
 
 		if (textures.Length <= index)
 			return;
@@ -598,9 +606,6 @@ public class OVROverlay : MonoBehaviour
 
 		if (layerTextures[0].appTexture as RenderTexture != null)
 			isDynamic = true;
-
-		if (!isDynamic && !createdLayer)
-			return;
 
 		if (!LatchLayerTextures())
 			return;

@@ -98,8 +98,11 @@ public class OVRDisplay
 	/// </summary>
 	public void RecenterPose()
 	{
+#if UNITY_2017_2_OR_NEWER
         UnityEngine.XR.InputTracking.Recenter();
-
+#else
+        VR.InputTracking.Recenter();
+#endif
 		if (RecenteredPose != null)
 		{
 			RecenteredPose();
@@ -166,7 +169,11 @@ public class OVRDisplay
 	/// <summary>
 	/// Gets the resolution and field of view for the given eye.
 	/// </summary>
+#if UNITY_2017_2_OR_NEWER
     public EyeRenderDesc GetEyeRenderDesc(UnityEngine.XR.XRNode eye)
+#else
+    public EyeRenderDesc GetEyeRenderDesc(VR.VRNode eye)
+#endif
 	{
 		return eyeDescs[(int)eye];
 	}
@@ -230,11 +237,20 @@ public class OVRDisplay
 
 	private void UpdateTextures()
 	{
+#if UNITY_2017_2_OR_NEWER
 		ConfigureEyeDesc(UnityEngine.XR.XRNode.LeftEye);
         ConfigureEyeDesc(UnityEngine.XR.XRNode.RightEye);
+#else
+		ConfigureEyeDesc(VR.VRNode.LeftEye);
+        ConfigureEyeDesc(VR.VRNode.RightEye);
+#endif
 	}
 
+#if UNITY_2017_2_OR_NEWER
     private void ConfigureEyeDesc(UnityEngine.XR.XRNode eye)
+#else
+    private void ConfigureEyeDesc(VR.VRNode eye)
+#endif
 	{
 		if (!OVRManager.isHmdPresent)
 			return;

@@ -19,8 +19,12 @@ public sealed class DesaturateScreenFade : MonoBehaviourSingleton<DesaturateScre
     private Material _fadeMaterial;
     private readonly YieldInstruction _fadeInstruction = new WaitForEndOfFrame();
 
+    public Color FadeColor { get; set; }
+
     protected override void Awake() {
         base.Awake();
+
+        FadeColor = Color.black;
 
         _postProcess = GetComponent<PostProcessingBehaviour>();
         _profile = Instantiate(_postProcess.profile);
@@ -105,7 +109,7 @@ public sealed class DesaturateScreenFade : MonoBehaviourSingleton<DesaturateScre
     /// </summary>
     private void OnPostRender() {
         if (_current > 0) {
-            _fadeMaterial.color = new Color(0, 0, 0, _current);
+            _fadeMaterial.color = new Color(FadeColor.r, FadeColor.g, FadeColor.b, _current);
             _fadeMaterial.SetPass(0);
             GL.PushMatrix();
             GL.LoadOrtho();

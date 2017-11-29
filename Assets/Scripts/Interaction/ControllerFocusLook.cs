@@ -7,7 +7,7 @@ public class ControllerFocusLook : MonoBehaviour {
 
     private void Update() {
         RaycastHit hitInfo;
-        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, MaxDistance, 0,
+        if (Physics.Raycast(transform.position, transform.forward, out hitInfo, MaxDistance, ~0,
             QueryTriggerInteraction.Collide)) {
 
             var interaction = hitInfo.transform.GetComponent<ControllerInteraction>();
@@ -16,6 +16,7 @@ public class ControllerFocusLook : MonoBehaviour {
                 return;
             }
         }
+        //Debug.DrawRay(transform.position, transform.forward * MaxDistance, Color.white);
 
         UpdateInteraction(null);
     }

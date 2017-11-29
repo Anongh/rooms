@@ -1,6 +1,4 @@
-﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
-Shader "Oculus/Texture2D Blit" {
+﻿Shader "Oculus/Texture2D Blit" {
     Properties{
         _MainTex("Base (RGB) Trans (A)", 2D) = "white" {}
         _linearToSrgb("Perform linear-to-gamma conversion", Int) = 0

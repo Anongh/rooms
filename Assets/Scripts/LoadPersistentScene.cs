@@ -6,12 +6,12 @@ public class LoadPersistentScene : MonoBehaviour {
     private const string SceneName = "PersistentScene";
 
     private void Awake() {
-        var persistentScene = SceneManager.GetSceneByName(SceneName);
+        //var persistentScene = SceneManager.GetSceneByName(SceneName);
 
-        if (!persistentScene.IsValid()) {
-            SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
-            //SceneManager.sceneLoaded += OnSceneLoaded;
-        }
+        //if (!persistentScene.IsValid()) {
+        //    SceneManager.LoadScene(SceneName, LoadSceneMode.Additive);
+        //    //SceneManager.sceneLoaded += OnSceneLoaded;
+        //}
     }
 
     //private void OnSceneLoaded(Scene scene, LoadSceneMode loadSceneMode) {
