@@ -197,8 +197,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _yawSpeed: 90
   _pitchSpeed: 60
-  _minX: -90
-  _maxX: 0
+  _minX: 0
+  _maxX: 90
 --- !u!135 &135943156642603882
 SphereCollider:
   m_ObjectHideFlags: 1

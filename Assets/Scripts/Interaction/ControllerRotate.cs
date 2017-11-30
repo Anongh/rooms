@@ -17,6 +17,7 @@ public sealed class ControllerRotate : ControllerInteraction {
         localRotation.y += yawInput * _yawSpeed * Time.deltaTime;
         localRotation.x += pitchInput * _pitchSpeed * Time.deltaTime;
         localRotation.x = Mathf.Clamp(localRotation.x, _minX, _maxX);
+        transform.localEulerAngles = localRotation;
     }
 
 //    private void OnTriggerEnter(Collider other) {

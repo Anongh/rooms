@@ -19,11 +19,13 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4231367203857776}
-  - component: {fileID: 114218486690820802}
   - component: {fileID: 33663207599932026}
-  - component: {fileID: 135300892977100142}
   - component: {fileID: 23515788461626646}
-  m_Layer: 8
+  - component: {fileID: 95404900377466746}
+  - component: {fileID: 114739000931703406}
+  - component: {fileID: 135300892977100142}
+  - component: {fileID: 114218486690820802}
+  m_Layer: 0
   m_Name: Satellite Target
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -36,13 +38,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930399281223638}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.43, y: 0.5, z: 3.17}
+  m_LocalRotation: {x: 0.043619405, y: 0, z: 0, w: 0.9990483}
+  m_LocalPosition: {x: -0, y: 44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 5, y: 0, z: 0}
 --- !u!23 &23515788461626646
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -57,7 +59,9 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 7886dc4f6e2ef784d9ce44ea10539c95, type: 2}
+  - {fileID: 2100000, guid: a2eb62881263d8745b3272396a5821d8, type: 2}
+  - {fileID: 2100000, guid: 7900ab3e1b7c5df43a0e70451f9ef351, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -65,7 +69,7 @@ MeshRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
+  m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
   m_StitchLightmapSeams: 0
@@ -83,7 +87,24 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1930399281223638}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: c3de0d01da018574398630f80608fb3f, type: 3}
+--- !u!95 &95404900377466746
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930399281223638}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: c3de0d01da018574398630f80608fb3f, type: 3}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114218486690820802
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -96,6 +117,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _renderer: {fileID: 23515788461626646}
+  _color: {r: 0.83823526, g: 0.26503026, b: 0.26503026, a: 1}
+  _offColor: {r: 0, g: 0, b: 0, a: 1}
+  _emissionColorMult: 2
+  _correctMaterial: {fileID: 2100000, guid: c80d68c6af81e4398a7cae916ee75334, type: 2}
+  _setColor: 1
+  _setEmission: 1
+  _untargetAfterTime: 0.2
+--- !u!114 &114739000931703406
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1930399281223638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 208a0887a29366f4cb5659e9972025c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: {x: 0, y: 5, z: 0}
 --- !u!135 &135300892977100142
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -106,5 +146,5 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 2.54
+  m_Center: {x: 0, y: -4.62, z: 0}
